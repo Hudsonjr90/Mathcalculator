@@ -1,0 +1,172 @@
+* {
+  transition: background-color ease-in-out .2s;
+}
+
+body {
+  background-color: rgb(228, 228, 228);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: Montserrat, sans-serif;
+}
+
+.main {
+  background-color: rgb(243, 243, 243);
+  width: 250px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 15px 0;
+  border-radius: 15px;
+}
+
+.result-container {
+  display: flex;
+  max-width: 100%;
+  min-height: 200px;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.toggle-dark {
+  align-self: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(231, 231, 231);
+  padding: 5px;
+  border-radius: 17px;
+  width: 70px;
+  height: 25px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.light-mode {
+  font-size: 22px;
+  color: rgb(54, 54, 54);
+}
+
+.dark-mode {
+  color: rgb(184, 184, 184);
+  transition: color ease-in-out .5s;
+}
+
+.curr-count {
+  font-size: 20px;
+  font-weight: 500;
+  height: 90px;
+  width: 250px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+  margin: 20px 0 0 0;
+}
+
+.result {
+  font-size: 35px;
+  font-weight: 600;
+  text-align: right;
+  width: 250px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  height: 60px;
+  margin: 0 0 20px 0;
+}
+
+.keyboard{
+  background-color: rgb(237, 237, 237);
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  margin: 5px;
+  border-radius: 50%;
+  background-color: rgb(231, 231, 231);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.key:active {
+  background-color: rgb(189, 189, 189);
+}
+
+.dot-p {
+  margin-bottom: 22px;
+}
+
+.count {
+  color: rgb(221, 146, 6);
+}
+
+.up-key {
+  color: rgb(101, 101, 250);
+  font-weight: 700;
+}
+
+.negative-positive {
+  display: flex;
+  flex-direction: column;
+  font-size: 11px;
+}
+
+.clear, .zero{
+  width: 113px;
+  border-radius: 30px;
+}
+
+/* darkmode */
+
+body.dark {
+  color: rgb(214, 214, 214);
+  background-color: rgb(44, 44, 44);
+}
+
+.main.dark {
+  background-color: rgb(19, 19, 19);
+}
+
+.toggle-dark.dark {
+  background-color: rgb(27, 27, 27);
+}
+
+.keyboard.dark {
+  background-color: rgb(23, 23, 23);
+}
+
+.key.dark {
+  background-color: rgb(20, 20, 20);
+}
+
+.key.dark:active {
+  background-color: rgb(36, 36, 36);
+}
+
+.count.dark {
+  background-color: rgb(20, 20, 20);
+  color: rgb(192, 131, 17);
+}
+
+@media screen and (max-width : 768px) {
+  body {
+    height: auto;
+  }
+
+  .main {
+    margin: 50px auto;
+  }
+}
