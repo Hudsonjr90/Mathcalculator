@@ -1,172 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&family=Baloo 2:wght@400;500;700&display=swap");
+
 * {
-  transition: background-color ease-in-out .2s;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Baloo 2", sans-serif;
 }
 
-body {
-  background-color: rgb(228, 228, 228);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  font-family: Montserrat, sans-serif;
+html, body {
+  height: 100%;
+  width: 100%;
 }
 
 .main {
-  background-color: rgb(243, 243, 243);
-  width: 250px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 15px 0;
-  border-radius: 15px;
-}
-
-.result-container {
-  display: flex;
-  max-width: 100%;
-  min-height: 200px;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-between;
-  flex-grow: 1;
-}
-
-.toggle-dark {
-  align-self: center;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: rgb(231, 231, 231);
-  padding: 5px;
-  border-radius: 17px;
-  width: 70px;
-  height: 25px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.light-mode {
-  font-size: 22px;
-  color: rgb(54, 54, 54);
-}
-
-.dark-mode {
-  color: rgb(184, 184, 184);
-  transition: color ease-in-out .5s;
-}
-
-.curr-count {
-  font-size: 20px;
-  font-weight: 500;
-  height: 90px;
-  width: 250px;
-  overflow-x: hidden;
-  text-overflow: ellipsis;
-  text-align: right;
-  margin: 20px 0 0 0;
-}
-
-.result {
-  font-size: 35px;
-  font-weight: 600;
-  text-align: right;
-  width: 250px;
-  overflow-x: hidden;
-  text-overflow: ellipsis;
-  height: 60px;
-  margin: 0 0 20px 0;
-}
-
-.keyboard{
-  background-color: rgb(237, 237, 237);
-  display: flex;
-  flex-wrap: wrap;
+  height: 100%;
   width: 100%;
-  padding: 15px;
-  border-radius: 15px;
+  background: radial-gradient(circle at 50% 50%, #192233 20%, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.key {
+.title{
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 52px;
-  height: 52px;
-  margin: 5px;
-  border-radius: 50%;
-  background-color: rgb(231, 231, 231);
-  font-weight: 500;
+}
+
+.title h2 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 2rem;
+  font-family: "Baloo 2", sans-serif;
+  margin-bottom: 1rem;
+}
+
+
+.calbody {
+  background-color: #02090e;
+  padding: 1vw;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  opacity: 0.9;
+  font-family: "Baloo 2", sans-serif;
+  max-width: 600px;
+  width: 90%;
+}
+
+.display {
+  height: 3vw;
+  width: 100%;
+  color: #d7e6fd;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-size: xx-large;
+  overflow-x: auto;
+  white-space: nowrap;
+  font-family: "Baloo 2", sans-serif;
+}
+
+.buttondiv {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os botões se movam para a próxima linha em telas menores */
+  gap: 0.5vw; /* Espaçamento entre os botões */
   cursor: pointer;
 }
 
-.key:active {
-  background-color: rgb(189, 189, 189);
-}
-
-.dot-p {
-  margin-bottom: 22px;
-}
-
-.count {
-  color: rgb(221, 146, 6);
-}
-
-.up-key {
-  color: rgb(101, 101, 250);
-  font-weight: 700;
-}
-
-.negative-positive {
+.buttonbox {
+  height: 5vw;
+  width: 5vw;
   display: flex;
-  flex-direction: column;
-  font-size: 11px;
+  align-items: center;
+  justify-content: center;
+  color: #d7e6fd;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Baloo 2", sans-serif;
 }
 
-.clear, .zero{
-  width: 113px;
-  border-radius: 30px;
+
+.orangebutton {
+  color: #7890fb;
 }
 
-/* darkmode */
-
-body.dark {
-  color: rgb(214, 214, 214);
-  background-color: rgb(44, 44, 44);
+.equalbutton {
+  background-color: #7890fb;
+  border-radius: 50%;
 }
 
-.main.dark {
-  background-color: rgb(19, 19, 19);
-}
-
-.toggle-dark.dark {
-  background-color: rgb(27, 27, 27);
-}
-
-.keyboard.dark {
-  background-color: rgb(23, 23, 23);
-}
-
-.key.dark {
-  background-color: rgb(20, 20, 20);
-}
-
-.key.dark:active {
-  background-color: rgb(36, 36, 36);
-}
-
-.count.dark {
-  background-color: rgb(20, 20, 20);
-  color: rgb(192, 131, 17);
-}
-
-@media screen and (max-width : 768px) {
-  body {
-    height: auto;
+/* Ajustes para botões em telas menores */
+@media (max-width: 768px) {
+  .buttons{
+    font-size: 1rem;
   }
 
-  .main {
-    margin: 50px auto;
+  .buttonbox {
+    height: 21vw;
+    width: 21vw;
+    font-size: 1.75rem;
   }
+  .display{
+    max-width: 100%;
+    min-height: 19vw;
+  }
+  .title h2 {
+    font-size: 1.75rem;
+  }
+
 }
+
