@@ -89,16 +89,45 @@ html, body {
   border-radius: 50%;
 }
 
-/* Ajustes para botões em telas menores */
-@media (max-width: 768px) {
+@media (min-width: 1025px) and (max-width: 1900px){
+  .buttonbox {
+    height: 7vw;
+    width: 7vw;
+    font-size: 2.25rem;
+  }
+  .calbody {
+    width: 40%;
+  }
+  .buttondiv{
+    gap: 3.1rem;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .calbody {
+    width: 44%;
+  }
+.display {
+  font-size: 1.6rem;
+}
+  .buttonbox {
+    height: 10vw;
+    width: 10vw;
+    font-size: 1.25rem;
+  }
+}
+
+
+@media (max-width: 767px) {
   .buttons{
-    font-size: 1rem;
+    font-size: 0.75rem;;
   }
 
   .buttonbox {
-    height: 21vw;
-    width: 21vw;
-    font-size: 1.75rem;
+    height: 15vw;
+    width: 15vw;
+    font-size: 1.5rem;
   }
   .display{
     max-width: 100%;
@@ -106,6 +135,9 @@ html, body {
   }
   .title h2 {
     font-size: 1.75rem;
+  }
+  .calbody {
+    width: 65%; 
   }
 
 }
